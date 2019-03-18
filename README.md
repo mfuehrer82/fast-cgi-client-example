@@ -3,7 +3,7 @@
 ## Environment
 
 * nginx/1.10.0
-* PHP 7.1
+* PHP 7.2
 	+ php-fpm
 	+ xdebug 
 	
@@ -17,23 +17,15 @@
 
 * [Docker](https://www.docker.com/get-docker)  
 
+### Setup
+
+- Open docker/php/xdebug.ini and replace ${HOST_IP} with your host IP.
+- Set IDE xdebug port to 10000.
+- Set IDE maximum simultaneous connection to 3 (or higher).   
 
 ### Installation 
 
-	docker pull prooph/composer:7.1
-    docker-compose up --build -d
-    docker run --rm -it --volume $(pwd):/app prooph/composer:7.1 install -o --prefer-dist
+	docker-compose up --build -d
     
-### Configuration 
-
-	docker exec -it app /bin/bash        
-## Tests
-
 ## Restart
-	docker-compose stop && docker-compose rm -f && docker-compose up -d   
-## Composer Update
-
-	docker run --rm -it --volume $(pwd):/app prooph/composer:7.1 install -o --prefer-dist
-## Rebuild
-
-	docker-compose up --build
+	docker-compose up -d --force-recreate  

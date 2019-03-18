@@ -23,6 +23,6 @@ final class RequestHandler
 	 */
 	public function handleRequest(Request $request): string
 	{
-		return 'Handle Task ' . $request->request->get('iteration');
+		return 'Handled ' . $request->request->get('iteration');
 	}
 }

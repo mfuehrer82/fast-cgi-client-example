@@ -21,10 +21,10 @@ class ClientExample
 	 */
 	public function run(  ): int
 	{
-		$client = new Client(new NetworkSocket('127.0.0.1', 9001));
+		$client = new Client(new NetworkSocket('127.0.0.1', 9000));
 		$i = 0;
 
-		while ( $i < 100 )
+		while ( $i < 10 )
 		{
 			$request = new PostRequest(
 				'/var/www/src/worker.php',
